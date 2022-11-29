@@ -13,11 +13,11 @@ let(:app) { Application.new }
 # GET /
 
 context "GET /" do
-  it "returns 200 OK" do
+  it "returns the html index" do
     response = get('/')
 
     expect(response.status).to eq(200)
-    expect(response.body).to eq('Hello!')
+    expect(response.body).to include('<h1>Hello!</h1>')
   end
 
 context "GET /hello" do
@@ -25,7 +25,7 @@ context "GET /hello" do
     response = get('/hello?name=Leo')
 
     expect(response.status).to eq(200)
-    expect(response.body).to eq ("Hello Leo!")
+    expect(response.body).to eq ('Hello Leo!')
   end
 
   it "should return 'Hello Josh!" do

@@ -9,7 +9,7 @@ require 'sinatra/reloader'
     # Root path (homepage, index.html)
     get '/' do
 
-      return 'Hello!'
+      return erb(:index)
     end
 
     get '/posts' do

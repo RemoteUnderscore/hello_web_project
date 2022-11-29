@@ -16,4 +16,13 @@ app->post:"Calls"\
 post->app:"Returns - Joe,Keiran,Zoe,Alice,Julia"\
 app->app:"Sorts names using Ruby code"\
 app->rackup:"Sends response - Alice,Joe,Julia,Keiran,Zoe"\
-rackup->client:"HTTP response - Alice,Joe,Julia,Keiran,Zoe"}
+rackup->client:"HTTP response - Alice,Joe,Julia,Keiran,Zoe"\
+\
+\
+client->app:"form data - artist name: artist genre"\
+app->repo:"app sends form data for conversion"\
+repo->database:"converts the form data to SQL command and send to database"\
+database->database:"inserts the information and creates a new entry"\
+database->repo:"using the gets command from repository we are able to assert that the entry has been made"\
+repo->app:"repository then sends this data back to the app"\
+app->client:"http response with confirmation that entry has been created, using GETS"}
